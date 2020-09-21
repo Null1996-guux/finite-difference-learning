@@ -41,7 +41,6 @@ class ModelData:
     def a(self):
         return 1
 
-
 def parabolic_fdbvd(model, NT, NS, method):
     tau, T = model.time_grid(NT)
     h, X = model.space_grid(NS)
@@ -118,7 +117,7 @@ def parabolic_fdbvd_test():
         emax[i] = parabolic_fdbvd_loss(pde.solution, uh, T, X)
     print('')
         
-    # 绘制误差表格
+    # 误差
     data = {
         'NS':[NS[i] for i in range(4)],
         'NT': [NT[i] for i in range(4)],
@@ -145,8 +144,6 @@ def parabolic_fdbvd_test():
     ani = animation.FuncAnimation(fig = fig, func = anima_func, frames = 200, \
                                   init_func = init_func, interval = 10, blit = False)
     plt.show() 
-
-
 
 if __name__ == '__main__':
     parabolic_fdbvd_test()
