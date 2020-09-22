@@ -87,7 +87,7 @@ def parabolic_fdbvd_loss(solution, uh, T, X):
 # 向前euluer法测试程序
 def parabolic_fdbvd_test():
     print("向前Euler法测试程序")
-    print("")
+    print("============================================================\n")
     t = np.array([0, 1])
     x = np.array([0, 1])
     NT = np.array([200, 800, 3200, 12800])
@@ -127,7 +127,8 @@ def parabolic_fdbvd_test():
     
     df = pd.DataFrame(data)
     print(df)
-
+    
+    # 按照时间绘制动画
     fig, ax = plt.subplots()
     xplt = Xrec[0]
     uhplt = uhrec[0][:, 0]
